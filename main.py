@@ -4,22 +4,22 @@ from pydantic import BaseModel
 
 app = fastapi.FastAPI()
 
-robot =[
-    "petia",
-    "sania",
-    "maria",
- ]
-
-@app.get("/robot")
-def list_robot():
-    return robot
-
-class NewRobot(BaseModel):
+class Robot(BaseModel):
     name: str
 
-@app.post('/bistro_vel')
-def bistro_vel(new_robot: NewRobot):
-    robot.append(new_robot.name)
+robots = [
+    Robot(name="petia"),
+    Robot(name="sania"),
+    Robot(name="maria"),
+]
+
+@app.get("/robots")
+def list_robots():
+    return robots
+
+@app.post('/robots')
+def create_robot(new_robot: Robot):
+    robots.append(new_robot)
     return "created new robot"
 
 if __name__ == "__main__":
