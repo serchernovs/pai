@@ -7,7 +7,9 @@ def on_start(update, context):
     context.bot.send_message(chat_id=chat.id, text="Привет, chernov1993 bot")
     
 token ="2142334978:AAFpJpjcjIBPlIO7WMJYHbd9gr1woKDJopw"
+
 updater = Updater(token, use_context=True)
+dispatcher = updater.dispatcher
 dispatcher.add_handler(CommandHandler("start", on_start))
 
 
