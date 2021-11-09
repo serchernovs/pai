@@ -1,5 +1,5 @@
 from telegram.ext import Updater, CommandHandler
-
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 print("бот запущен")
 
 def on_start(update, context):
@@ -7,7 +7,7 @@ def on_start(update, context):
     context.bot.send_message(chat_id=chat.id, text="Привет, chernov1993 bot")
     
 token ="2142334978:AAFpJpjcjIBPlIO7WMJYHbd9gr1woKDJopw"
-
+dispatcher.add_handler(MessageHandler(Filters.all, on_message))
 updater = Updater(token, use_context=True)
 dispatcher = updater.dispatcher
 dispatcher.add_handler(CommandHandler("start", on_start))
