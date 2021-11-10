@@ -9,18 +9,14 @@ def on_start(update, context):
 def on_message(update, context):
 	chat = update.effective_chat
 	text = update.message.text
-	try:
+try:
 		number = float(text)
 		rate = 80.34
 		soms = number * rate
 		message = "$%.2f = %.2f сом" % (number, soms)
 		context.bot.send_message(chat_id=chat.id, text=message)
-try:
-    for i in range(3):
-        print(3/i)
 except:
-    print("  some()")
-    print("some2")
+    
 
      
      
