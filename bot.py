@@ -15,7 +15,15 @@ def on_message(update, context):
 		soms = number * rate
 		message = "$%.2f = %.2f сом" % (number, soms)
 		context.bot.send_message(chat_id=chat.id, text=message)
-	except:
+try:
+    for i in range(3):
+        print(3/i)
+except:
+    print("  some()")
+    print("some2")
+
+     
+     
  context.bot.send_message(chat_id=chat.id, text="Напишите число для перевода")
  
 token ="2124393369:AAEfbl-lPNuvrblZAqi0Fox9dav-kfLSrCY"
