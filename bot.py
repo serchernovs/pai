@@ -16,13 +16,14 @@ def on_message(update, context):
 		message = "$%.2f = %.2f сом" % (number, soms)
 		context.bot.send_message(chat_id=chat.id, text=message)
 	except:
-    
+ context.bot.send_message(chat_id=chat.id, text="Напишите число для перевода")
+ 
 token ="2124393369:AAEfbl-lPNuvrblZAqi0Fox9dav-kfLSrCY"
-dispatcher.add_handler(MessageHandler(Filters.all, on_message))
 updater = Updater(token, use_context=True)
+
 dispatcher = updater.dispatcher
 dispatcher.add_handler(CommandHandler("start", on_start))
-
+dispatcher.add_handler(MessageHandler(Filters.all, on_message))
 
 updater.start_polling()
 updater.idle()
