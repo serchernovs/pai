@@ -3,8 +3,8 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 print("бот запущен")
 
 def on_start(update, context):
-    chat = update.effective_chat
-    context.bot.send_message(chat_id=chat.id, text="Привет, sergei1993valutnii_bot")
+	chat = update.effective_chat
+	context.bot.send_message(chat_id=chat.id, text="Привет, sergei1993valutnii_bot")
     
 def on_message(update, context):
 	chat = update.effective_chat
@@ -15,18 +15,10 @@ def on_message(update, context):
 		soms = number * rate
 		message = "$%.2f = %.2f сом" % (number, soms)
 		context.bot.send_message(chat_id=chat.id, text=message)
-try:
-    for i in range(3):
-        print(3/i)
-except:
-    print("  some()")
-    print("some2")
-
-     
-     
- context.bot.send_message(chat_id=chat.id, text="Напишите число для перевода")
+	except:
+		context.bot.send_message(chat_id=chat.id, text="Напишите число для перевода")
  
-token ="2124393369:AAEfbl-lPNuvrblZAqi0Fox9dav-kfLSrCY"
+token = "2124393369:AAEfbl-lPNuvrblZAqi0Fox9dav-kfLSrCY"
 updater = Updater(token, use_context=True)
 
 dispatcher = updater.dispatcher
