@@ -9,18 +9,18 @@ def on_start(update, context):
 def on_message(update, context):
 	chat = update.effective_chat
 	text = update.message.text
-try:
+ 	try:
 		number = float(text)
 		rate = 80.34
 		soms = number * rate
 		message = "$%.2f = %.2f сом" % (number, soms)
 		context.bot.send_message(chat_id=chat.id, text=message)
-except:
+	except:
     
 
      
      
- context.bot.send_message(chat_id=chat.id, text="Напишите число для перевода")
+ 		context.bot.send_message(chat_id=chat.id, text="Напишите число для перевода")
  
 token ="2124393369:AAEfbl-lPNuvrblZAqi0Fox9dav-kfLSrCY"
 updater = Updater(token, use_context=True)
